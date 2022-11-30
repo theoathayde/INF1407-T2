@@ -1,0 +1,8 @@
+{% extends 'autent/base.html' %}
+{% block title %}Página Secreta{% endblock %}
+{% block content %}
+<h2>Perfil</h2>
+<p>
+   Olá {% firstof user.username "visitante" %}
+</p>
+{% endblock %}

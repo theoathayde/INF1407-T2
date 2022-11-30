@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    {% include 'forum/links.html' %}
+    <h1>Seja bem-vindo ao fórum!</h1> <br>
+    {% csrf_token %}
+    
+
+    <br>Clique <a href="{% url 'forum:lista-posts' %}">aqui</a> para acessar a lista de posts.
+    <li>
+        <a href="{% url 'sec-home' %}">
+        Página inicial de controle de acesso
+        </a>
+       </li>
+
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Apaga Post</title>
+</head>
+
+<body>
+    {% include 'forum/links.html' %}
+    <h1>Deleção de Post</h1>
+    <form method="POST">
+        {% csrf_token %}
+        Confirma a deleção de {{ post }}?<br>
+        <button>
+            <a href="{% url 'forum:lista-posts' %}" style="text-decoration: none; color: black;">Cancela</a>
+        </button>
+        <input type="submit" value="Remove">
+    </form>
+</body>
+
+</html>

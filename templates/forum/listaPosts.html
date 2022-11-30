@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lista Posts</title>
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+ {% include 'forum/links.html' %}
+ <h1>Lista de Posts</h1>
+ <table>
+<a href="{% url 'forum:cria-post' %}">
+       Criar post
+</a>
+ <tr><th>Tópico</th><th>Ações disponíveis</th></tr>
+ {% for post in posts %}
+ <tr>
+ <td>{{post.post_topic }}</td>
+ <td><a href="{% url 'forum:atualiza-post' pk=post.id %}">Atualizar</a> |
+ <a href="{% url 'forum:apaga-post' pk=post.id %}">Excluir</a> |
+ <a href="{% url 'forum:visualiza-post' pk=post.id %}">Visualizar</a>
+</td> 
+
+ </tr>
+ {% empty %}
+ <tr><th colspan="5">Ainda não tem posts postados</th></tr>
+ {% endfor %}
+ </table>
+</body>
+</html>

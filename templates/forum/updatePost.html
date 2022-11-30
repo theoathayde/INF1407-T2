@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Atualiza Post</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+
+<body>
+    {% include 'forum/links.html' %}
+    <h1>Atualização de Posts</h1>
+    <form method="POST" class='formulario'>
+        {% csrf_token %}
+        <table>
+            {{ post.as_table }}
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Atualiza"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Visualiza Post</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+
+<body>
+    {% include 'forum/links.html' %}
+    <h1> Tópico: {{ post.post_topic }} </h1>
+   <p>
+        Conteúdo do post: <br>
+        {{ post.post_content }}
+   </p>
+    
+</body>

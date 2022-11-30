@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cria Post</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+
+<body>
+    {% include 'forum/links.html' %}
+    <h1>Cria um post</h1>
+    <form action="" method="POST">
+        <fieldset style="width: max-content;">
+            <legend>Criação Post</legend>
+            {% csrf_token %}
+            <table class='formulario'>
+                {{ formulario.as_table }}
+            </table>
+            <button type="submit">Cria post</button>
+        </fieldset>
+    </form>
+</body>
